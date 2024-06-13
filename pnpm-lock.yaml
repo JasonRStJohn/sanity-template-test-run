@@ -7,6 +7,10 @@ settings:
 importers:
 
   .:
+    dependencies:
+      '@portabletext/vue':
+        specifier: ^1.0.7
+        version: 1.0.9(vue@3.4.21)
     devDependencies:
       prettier:
         specifier: 3.2.5
@@ -4922,6 +4926,7 @@ packages:
       loose-envify: 1.4.0
       object-assign: 4.1.1
     dev: false
+    bundledDependencies: false
 
   /create-require@1.1.1:
     resolution: {integrity: sha512-dcKFX3jn0MpIaXjisoRvexIJVEKzaq7z2rZKxf+MSr9TkdmHmsU4m2lcLojrj/FHl8mk5VxMmYA+ftRkP/3oKQ==}

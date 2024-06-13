@@ -10,7 +10,7 @@
 
   <div class="container">
     <header class="header">
-      <a class="header__title" href="/">Nuxt + Sanity</a>
+      <a class="header__title" href="/">AERO: The Education Revolution</a>
     </header>
     <main>
       <NuxtPage />
@@ -95,7 +95,7 @@ const { enabled: previewEnabled, inFrame } = useSanityVisualEditingState()
   --magenta-100: #f9d7eb;
 
   --max-width-0: 320px;
-  --max-width-1: 768px;
+  --max-width-1: 1920px;
 }
 
 html {
@@ -158,6 +158,7 @@ main {
 @media (min-width: 575px) {
   .container {
     max-width: var(--max-width-1);
+    width: 100%;
     padding: 0 var(--space-4);
   }
 
