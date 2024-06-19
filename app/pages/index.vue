@@ -23,6 +23,7 @@ const mainDivBackground = homepage?.mainImage ? `url(${urlFor(homepage?.mainImag
       <h4 class="hero-heading">The Education Revolution</h4>
       <a class="call-to-action" href="#">Find Out More</a>
     </div>
+    <Carousel></Carousel>
     <div>
       <PortableText
         :value="body"
