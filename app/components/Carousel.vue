@@ -1,5 +1,5 @@
 <template>
-  <div class='carousel-view'>
+  <div class='carousel-view' ref="cv">
     <transition-group
         class='carousel'
         tag="div">
@@ -8,7 +8,7 @@
           class='slide'
           :key="slide.id">
         <a href="https://google.com" style="width:100%;height:100%" target="_blank">
-          <img :src="`https://placehold.co/320x320/${slide.color}/white`" />
+          <img :alt="slide.title" :src="`https://placehold.co/320x320/${slide.color}/white`" />
         </a>
       </div>
     </transition-group>
@@ -16,6 +16,9 @@
 </template>
 
 <script setup>
+
+import { useSwipe } from '@vueuse/core'
+
   let slides = ref([
     {
       title: 'I am Slide A',
@@ -65,7 +68,14 @@
   }
   
   autoSlide(0)
-
+  
+  const cv = ref(null)
+  const { isSwiping, direction, lengthX, lengthY } = useSwipe(cv, {
+    onSwipe(e){
+      if(lengthX > 1) console.log("greater")
+      if(lengthX < 1) console.log("lesser")
+    }
+  })  
 </script>
 
 <style>
@@ -93,9 +103,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
-  border: 0.1em dashed #000;
-  border-radius: 50%;
 
   transition: transform 0.3s ease-in-out;
 }

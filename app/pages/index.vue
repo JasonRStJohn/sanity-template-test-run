@@ -23,7 +23,9 @@ const mainDivBackground = homepage?.mainImage ? `url(${urlFor(homepage?.mainImag
       <h4 class="hero-heading">The Education Revolution</h4>
       <a class="call-to-action" href="#">Find Out More</a>
     </div>
-    <Carousel></Carousel>
+    <div id="carousel-container">
+      <Carousel></Carousel>
+    </div>
     <div>
       <PortableText
         :value="body"
@@ -38,13 +40,13 @@ const mainDivBackground = homepage?.mainImage ? `url(${urlFor(homepage?.mainImag
     top: 45%;
     left: 42%;
   }
-  .hero-image-spaceholder{
-    visibility: hidden;
-    position: relative;
+  #hero-image-spaceholder{
     width:100%;
   }
   #hero-image {
     background-image: v-bind(mainDivBackground);
+    background-size: cover;
     position:relative;
+    width:100%;
   }
 </style>
